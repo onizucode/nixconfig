@@ -144,8 +144,6 @@
   };
   programs.lazygit.enable = true;
   programs.htop.enable = true;
-
-  # Install 1Password
   programs._1password-gui = {
     enable = true;
     polkitPolicyOwners = [ "mikastiv" ];
@@ -158,11 +156,15 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Use zsh
+  environment.shells = [ pkgs.zsh ];
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     kitty
-    gcc
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
