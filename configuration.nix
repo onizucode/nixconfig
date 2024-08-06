@@ -95,12 +95,6 @@
     enable = true;
     defaultEditor = true;
   };
-  programs.git = {
-    enable = true;
-    lfs.enable = true;
-  };
-  programs.lazygit.enable = true;
-  programs.htop.enable = true;
   programs._1password-gui = {
     enable = true;
     polkitPolicyOwners = [ "mikastiv" ];
