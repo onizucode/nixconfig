@@ -21,6 +21,7 @@
     gnome-console
     gnome-user-docs
     gedit
+  ]) ++ (with pkgs.gnome; [
     cheese
     gnome-terminal
     gnome-calendar
@@ -34,7 +35,6 @@
     totem
     file-roller
     seahorse
-  ]) ++ (with pkgs.gnome; [
     gnome-music
     gnome-clocks
     gnome-contacts

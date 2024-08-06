@@ -89,6 +89,13 @@
     ];
   };
 
+  # Fonts
+  fonts.packages = with pkgs; [
+   jetbrains-mono
+
+   (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) 
+  ];
+
   # Default programs
   programs.firefox.enable = true;
   programs.neovim = {
