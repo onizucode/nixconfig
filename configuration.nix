@@ -57,39 +57,6 @@
   services.xserver.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-tour
-    gnome-connections
-    gnome-text-editor
-    gnome-console
-    gnome-user-docs
-    gedit
-  ]) ++ (with pkgs.gnome; [
-    cheese
-    gnome-music
-    gnome-terminal
-    gnome-calendar
-    gnome-clocks
-    gnome-contacts
-    gnome-system-monitor
-    gnome-maps
-    gnome-logs
-    gnome-calculator
-    gnome-weather
-    yelp
-    simple-scan
-    epiphany
-    geary
-    evince
-    gnome-characters
-    totem
-    file-roller
-    seahorse
-  ]);
-
   # Window manager
   # programs.hyprland.enable = true;
   # programs.hyprlock.enable = true;
