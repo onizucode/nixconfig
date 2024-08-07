@@ -17,6 +17,17 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
+        {
+          nixpkgs.overlays = [
+            (final: prev: {
+              # unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+              unstable = import nixpkgs-unstable {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            })
+          ];
+        }
         ./configuration.nix
 	./modules/gnome.nix
       ];
@@ -26,6 +37,17 @@
       inherit pkgs;
       extraSpecialArgs = { inherit inputs; };
       modules = [
+        {
+          nixpkgs.overlays = [
+            (final: prev: {
+              # unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+              unstable = import nixpkgs-unstable {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            })
+          ];
+        }
         ./home.nix
       ];
     };
