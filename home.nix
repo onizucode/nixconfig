@@ -33,7 +33,7 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "neovim";
+    EDITOR = "nvim";
   };
 
   programs = {
