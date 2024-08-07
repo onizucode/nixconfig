@@ -20,6 +20,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    gnumake
     clang
     lldb
     clang-tools
@@ -50,6 +51,13 @@
 	  defaultBranch = "main";
 	};
       };
+    };
+
+    neovim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
     };
 
     lazygit.enable = true;
