@@ -97,14 +97,23 @@
   ];
 
   # Default programs
-  programs.firefox.enable = true;
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-  programs._1password-gui = {
-    enable = true;
-    polkitPolicyOwners = [ "mikastiv" ];
+  programs = {
+    git = {
+      enable = true;
+      lfs.enable = true;
+    };
+
+    firefox.enable = true;
+
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
+
+    _1password-gui = {
+      enable = true;
+      polkitPolicyOwners = [ "mikastiv" ];
+    };
   };
 
   # Virtualisation

@@ -23,26 +23,46 @@
   # plain files is through 'home.file'.
   home.file = {
     ".config/kitty/kitty.conf".source = dotfiles/kitty.conf;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
   };
 
   home.sessionVariables = {
     EDITOR = "neovim";
   };
 
-  programs.git = {
-    enable = true;
-    lfs.enable = true;
-    userEmail = "mikastiv@outlook.com";
-    userName = "mikastiv";
+  programs = {
+    git = {
+      enable = true;
+      lfs.enable = true;
+      userEmail = "mikastiv@outlook.com";
+      userName = "mikastiv";
+    };
+
+    lazygit.enable = true;
+
+    htop.enable = true;
+
+    btop.enable = true;
+
+    bat.enable = true;
+
+    ripgrep.enable = true;
+
+    eza = {
+      enable = true;
+      icons = true;
+    };
+
+    zsh = {
+      enable = true;
+      autosuggestion.enable = true;
+      defaultKeymap = "emacs";
+      shellAliases = {
+        ls = "eza";
+	l = "eza -lab";
+	cat = "bat";
+      };
+    };
   };
-  programs.htop.enable = true;
-  programs.lazygit.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
