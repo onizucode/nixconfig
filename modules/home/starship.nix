@@ -88,7 +88,10 @@
       rust.symbol = "󱘗 ";
       scala.symbol = " ";
       swift.symbol = " ";
-      zig.symbol = " ";
+      zig = {
+        symbol = " ";
+	detect_files = [ "build.zig" "build.zig.zon" ];
+      };
     };
   };
 }
