@@ -98,10 +98,7 @@
 
   # Default programs
   programs = {
-    git = {
-      enable = true;
-      lfs.enable = true;
-    };
+    git.enable = true;
 
     firefox.enable = true;
 

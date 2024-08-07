@@ -42,6 +42,11 @@
       lfs.enable = true;
       userEmail = "mikastiv@outlook.com";
       userName = "mikastiv";
+      extraConfig = {
+        init = {
+	  defaultBranch = "main";
+	};
+      };
     };
 
     lazygit.enable = true;
@@ -57,6 +62,7 @@
     eza = {
       enable = true;
       icons = true;
+      git = true;
     };
 
     zsh = {
