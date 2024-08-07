@@ -29,7 +29,7 @@
           ];
         }
         ./configuration.nix
-	./modules/gnome.nix
+	./modules/nixos/gnome.nix
       ];
     };
 
@@ -49,6 +49,7 @@
           ];
         }
         ./home.nix
+	./modules/home/starship.nix
       ];
     };
   };

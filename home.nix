@@ -23,6 +23,7 @@
     clang
     lldb
     clang-tools
+    onefetch
     zigpkgs.master
     unstable.ncdu
   ];
