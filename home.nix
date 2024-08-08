@@ -35,7 +35,7 @@
   # plain files is through 'home.file'.
   home.file = {
     ".config/kitty/kitty.conf".source = dotfiles/kitty/kitty.conf;
-    ".config/kitty/theme.conf".source = dotfiles/kitty/default.conf;
+    ".config/kitty/theme.conf".source = dotfiles/kitty/oceanspace.conf;
     ".config/ncdu/config".source = dotfiles/ncdu;
   };
 
