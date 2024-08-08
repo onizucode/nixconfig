@@ -56,13 +56,6 @@
       };
     };
 
-    neovim = {
-      enable = true;
-      viAlias = true;
-      vimAlias = true;
-      vimdiffAlias = true;
-    };
-
     firefox.enable = true;
 
     lazygit.enable = true;
