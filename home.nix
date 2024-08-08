@@ -32,7 +32,8 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/kitty/kitty.conf".source = dotfiles/kitty.conf;
+    ".config/kitty/kitty.conf".source = dotfiles/kitty/kitty.conf;
+    ".config/kitty/theme.conf".source = dotfiles/kitty/cobalt2.conf;
     ".config/ncdu/config".source = dotfiles/ncdu;
   };
 
