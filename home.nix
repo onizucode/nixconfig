@@ -25,6 +25,8 @@
     lldb
     clang-tools
     onefetch
+    fastfetch
+    cpufetch
     zigpkgs.master
     unstable.ncdu
   ];
@@ -60,6 +62,8 @@
       vimAlias = true;
       vimdiffAlias = true;
     };
+
+    firefox.enable = true;
 
     lazygit.enable = true;
 

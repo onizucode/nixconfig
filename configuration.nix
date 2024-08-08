@@ -53,10 +53,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Window manager
-  # programs.hyprland.enable = true;
-  # programs.hyprlock.enable = true;
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -99,8 +95,6 @@
   # Default programs
   programs = {
     git.enable = true;
-
-    firefox.enable = true;
 
     neovim = {
       enable = true;
