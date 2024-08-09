@@ -17,7 +17,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Automatic garbage collect
-  nix.settings.auto-optimise-store = true;
   nix.optimise.automatic = true;
   nix.gc = {
     automatic = true;
