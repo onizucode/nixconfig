@@ -54,9 +54,10 @@
       userEmail = "mikastiv@outlook.com";
       userName = "mikastiv";
       extraConfig = {
-        init = {
-	  defaultBranch = "main";
-	};
+        init.defaultBranch = "main";
+	commit.gpgsign = true;
+	gpg.format = "ssh";
+	user.signingKey = "~/.ssh/id_ed25519_sign.pub";
       };
     };
 
