@@ -12,44 +12,28 @@
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... } @inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+         inherit system;
+         config.allowUnfree = true;
+      };
     in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
+      specialArgs = { inherit inputs system; };
       modules = [
-        {
-          nixpkgs.overlays = [
-            (final: prev: {
-              # unstable = nixpkgs-unstable.legacyPackages.${prev.system};
-              unstable = import nixpkgs-unstable {
-                inherit system;
-                config.allowUnfree = true;
-              };
-            })
-          ];
-        }
         ./configuration.nix
-	./modules/nixos/gnome.nix
+        ./modules/unstable-overlay.nix
+        ./modules/nixos/gnome.nix
       ];
     };
 
     homeConfigurations.mikastiv = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = { inherit inputs; };
+      extraSpecialArgs = { inherit inputs system; };
       modules = [
-        {
-          nixpkgs.overlays = [
-            (final: prev: {
-              # unstable = nixpkgs-unstable.legacyPackages.${prev.system};
-              unstable = import nixpkgs-unstable {
-                inherit system;
-                config.allowUnfree = true;
-              };
-            })
-          ];
-        }
         ./home.nix
-	./modules/home/starship.nix
+        ./modules/unstable-overlay.nix
+        ./modules/home/starship.nix
       ];
     };
   };

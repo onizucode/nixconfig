@@ -10,18 +10,22 @@
       ./hardware-configuration.nix
     ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Automatic garbage collect
-  nix.optimise.automatic = true;
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 14d";
+  # Nix settings
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 14d";
+    };
   };
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -100,12 +104,15 @@
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
+      package = pkgs.unstable.neovim-unwrapped;
     };
 
     _1password-gui = {
       enable = true;
       polkitPolicyOwners = [ "mikastiv" ];
     };
+
+    steam.enable = true;
   };
 
   # Virtualisation

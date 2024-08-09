@@ -21,6 +21,7 @@
   # environment.
   home.packages = with pkgs; [
     brave
+    discord
     gnumake
     clang
     lldb
@@ -47,19 +48,6 @@
   };
 
   programs = {
-    git = {
-      enable = true;
-      lfs.enable = true;
-      userEmail = "mikastiv@outlook.com";
-      userName = "mikastiv";
-      extraConfig = {
-        init.defaultBranch = "main";
-	commit.gpgsign = true;
-	gpg.format = "ssh";
-	user.signingKey = "~/.ssh/id_ed25519_sign.pub";
-      };
-    };
-
     firefox.enable = true;
     lazygit.enable = true;
     htop.enable = true;
@@ -67,6 +55,25 @@
     bat.enable = true;
     ripgrep.enable = true;
     fastfetch.enable = true;
+
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
+
+    git = {
+      enable = true;
+      lfs.enable = true;
+      userEmail = "mikastiv@outlook.com";
+      userName = "mikastiv";
+      extraConfig = {
+        init.defaultBranch = "main";
+        commit.gpgsign = true;
+        gpg.format = "ssh";
+        user.signingKey = "~/.ssh/id_ed25519_sign.pub";
+      };
+    };
 
     eza = {
       enable = true;
@@ -80,8 +87,8 @@
       defaultKeymap = "emacs";
       shellAliases = {
         ls = "eza";
-	l = "eza -lab";
-	cat = "bat";
+        l = "eza -lab";
+        cat = "bat";
       };
     };
   };
