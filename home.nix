@@ -26,7 +26,6 @@
     lldb
     clang-tools
     onefetch
-    fastfetch
     cpufetch
     valgrind
     wl-clipboard
@@ -62,16 +61,12 @@
     };
 
     firefox.enable = true;
-
     lazygit.enable = true;
-
     htop.enable = true;
-
     btop.enable = true;
-
     bat.enable = true;
-
     ripgrep.enable = true;
+    fastfetch.enable = true;
 
     eza = {
       enable = true;
