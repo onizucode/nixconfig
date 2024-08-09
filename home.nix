@@ -28,6 +28,8 @@
     onefetch
     fastfetch
     cpufetch
+    valgrind
+    wl-clipboard
     zigpkgs.master
     unstable.ncdu
   ];
@@ -38,6 +40,7 @@
     ".config/kitty/kitty.conf".source = dotfiles/kitty/kitty.conf;
     ".config/kitty/theme.conf".source = dotfiles/kitty/oceanspace.conf;
     ".config/ncdu/config".source = dotfiles/ncdu;
+    ".config/lazygit/config.yml".source = dotfiles/lazygit.yml;
   };
 
   home.sessionVariables = {
