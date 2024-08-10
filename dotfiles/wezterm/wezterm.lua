@@ -1,12 +1,14 @@
 local wezterm = require 'wezterm'
-local config = {}
+local config = wezterm.config_builder()
 
-config.font_size = 12
+config.font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Bold' })
+config.font_size = 13
 
-config.color_scheme = 'Neowave'
+config.color_scheme = 'Blue Matrix'
 
 config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
 
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.8
 
 return config
