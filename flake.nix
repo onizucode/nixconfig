@@ -16,23 +16,29 @@
          inherit system;
          config.allowUnfree = true;
       };
+      overlay-unstable = self: super: {
+        unstable = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
     in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs system; };
+      specialArgs = { inherit inputs; };
       modules = [
+        { nixpkgs.overlays = [ overlay-unstable ]; }
         ./configuration.nix
-        ./modules/unstable-overlay.nix
         ./modules/nixos/gnome.nix
       ];
     };
 
     homeConfigurations.mikastiv = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = { inherit inputs system; };
+      extraSpecialArgs = { inherit inputs; };
       modules = [
+        { nixpkgs.overlays = [ overlay-unstable inputs.zig.overlays.default ]; }
         ./home.nix
-        ./modules/unstable-overlay.nix
         ./modules/home/starship.nix
       ];
     };
