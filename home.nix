@@ -39,6 +39,7 @@
     ".config/kitty/theme.conf".source = dotfiles/kitty/neowave.conf;
     ".config/ncdu/config".source = dotfiles/ncdu;
     ".config/lazygit/config.yml".source = dotfiles/lazygit.yml;
+    ".config/wezterm/wezterm.lua".source = dotfiles/wezterm/wezterm.lua;
   };
 
   home.sessionVariables = {
@@ -53,6 +54,15 @@
     bat.enable = true;
     ripgrep.enable = true;
     fastfetch.enable = true;
+
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
+      package = pkgs.unstable.neovim-unwrapped;
+    };
 
     direnv = {
       enable = true;

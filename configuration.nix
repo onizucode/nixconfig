@@ -97,16 +97,6 @@
 
   # Default programs
   programs = {
-    git.enable = true;
-
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-      package = pkgs.unstable.neovim-unwrapped;
-    };
-
     _1password-gui = {
       enable = true;
       polkitPolicyOwners = [ "mikastiv" ];
@@ -131,6 +121,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     kitty
+    wezterm
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
