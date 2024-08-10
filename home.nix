@@ -38,7 +38,7 @@
   # plain files is through 'home.file'.
   home.file = {
     ".config/kitty/kitty.conf".source = dotfiles/kitty/kitty.conf;
-    ".config/kitty/theme.conf".source = dotfiles/kitty/oceanspace.conf;
+    ".config/kitty/theme.conf".source = dotfiles/kitty/neowave.conf;
     ".config/ncdu/config".source = dotfiles/ncdu;
     ".config/lazygit/config.yml".source = dotfiles/lazygit.yml;
   };
