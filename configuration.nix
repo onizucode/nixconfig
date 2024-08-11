@@ -12,8 +12,21 @@
 
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    plymouth = {
+      enable = true;
+      theme = "breeze";
+#      themePackages = with pkgs; [
+#        (adi1090x-plymouth-themes.override {
+#          selected_themes = [ ];
+#        })
+#      ];
+    };
+  };
 
   # Nix settings
   nix = {
