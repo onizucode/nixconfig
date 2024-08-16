@@ -46,6 +46,13 @@
     EDITOR = "nvim";
   };
 
+  xdg = {
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
+  };
+
   programs = {
     firefox.enable = true;
     lazygit.enable = true;
