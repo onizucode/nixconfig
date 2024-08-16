@@ -40,6 +40,7 @@
     ".config/ncdu/config".source = dotfiles/ncdu;
     ".config/lazygit/config.yml".source = dotfiles/lazygit.yml;
     ".config/wezterm/wezterm.lua".source = dotfiles/wezterm/wezterm.lua;
+    ".config/starship.toml".source = dotfiles/starship.toml;
   };
 
   home.sessionVariables = {
@@ -61,6 +62,7 @@
     bat.enable = true;
     ripgrep.enable = true;
     fastfetch.enable = true;
+    starship.enable = true;
 
     neovim = {
       enable = true;

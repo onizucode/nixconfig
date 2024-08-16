@@ -39,7 +39,6 @@
       modules = [
         { nixpkgs.overlays = [ overlay-unstable inputs.zig.overlays.default ]; }
         ./home.nix
-        ./modules/home/starship.nix
       ];
     };
   };
