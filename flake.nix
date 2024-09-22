@@ -29,8 +29,8 @@
       modules = [
         { nixpkgs.overlays = [ overlay-unstable ]; }
         ./configuration.nix
-#        ./modules/nixos/gnome.nix
-        ./modules/nixos/hyprland.nix
+        ./modules/nixos/gnome.nix
+#        ./modules/nixos/hyprland.nix
       ];
     };
 
