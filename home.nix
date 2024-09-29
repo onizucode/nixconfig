@@ -47,6 +47,9 @@
     EDITOR = "nvim";
   };
 
+  home.sessionPath = [
+  ];
+
   xdg = {
     userDirs = {
       enable = true;
