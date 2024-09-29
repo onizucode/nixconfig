@@ -23,13 +23,14 @@
     gnumake
     clang
     lldb
-    clang-tools
     onefetch
     cpufetch
     valgrind
     wl-clipboard
     zigpkgs.master
     unstable.ncdu
+    unzip
+    python3
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -41,14 +42,17 @@
     ".config/lazygit/config.yml".source = dotfiles/lazygit.yml;
     ".config/wezterm/wezterm.lua".source = dotfiles/wezterm/wezterm.lua;
     ".config/starship.toml".source = dotfiles/starship.toml;
+    ".config/nvim" = {
+      source = dotfiles/nvim;
+      recursive = true;
+    };
   };
 
   home.sessionVariables = {
     EDITOR = "nvim";
   };
 
-  home.sessionPath = [
-  ];
+  home.sessionPath = [];
 
   xdg = {
     userDirs = {
