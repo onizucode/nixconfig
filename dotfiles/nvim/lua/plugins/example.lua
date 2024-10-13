@@ -6,7 +6,6 @@
 -- * override the configuration of LazyVim plugins
 
 local home_dir = os.getenv("HOME")
-local nix_profile = home_dir .. "/.nix-profile"
 
 return {
   -- change trouble config
@@ -85,7 +84,19 @@ return {
       servers = {
         zls = {
           cmd = { home_dir .. "/.zls/zig-out/bin/zls" },
+          settings = {
+            enable_autofix = true,
+          },
         },
+      },
+    },
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    opts = {
+      experimental = {
+        ghost_text = false,
       },
     },
   },
