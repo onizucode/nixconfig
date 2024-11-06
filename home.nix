@@ -97,6 +97,9 @@
         gpg.format = "ssh";
         user.signingKey = "~/.ssh/id_ed25519_sign.pub";
       };
+      ignores = [
+        "*.swp"
+      ];
     };
 
     eza = {
