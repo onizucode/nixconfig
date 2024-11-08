@@ -62,7 +62,6 @@
   };
 
   programs = {
-    firefox.enable = true;
     lazygit.enable = true;
     htop.enable = true;
     btop.enable = true;
