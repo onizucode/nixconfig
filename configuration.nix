@@ -97,7 +97,7 @@
   users.users.mikastiv = {
     isNormalUser = true;
     description = "mikastiv";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "libvirtd" "dialout" ];
     packages = with pkgs; [
     #  thunderbird
     ];

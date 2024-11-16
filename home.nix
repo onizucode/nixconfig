@@ -30,7 +30,9 @@
     zigpkgs.master
     unstable.ncdu
     unzip
+    zip
     python3
+    scc
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -70,6 +72,11 @@
     fastfetch.enable = true;
     starship.enable = true;
 
+    vscode = {
+      enable = true;
+      package = pkgs.unstable.vscode;
+    };
+
     neovim = {
       enable = true;
       defaultEditor = true;
@@ -98,6 +105,7 @@
       };
       ignores = [
         "*.swp"
+        ".direnv"
       ];
     };
 
