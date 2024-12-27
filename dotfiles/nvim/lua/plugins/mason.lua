@@ -5,6 +5,7 @@ return {
       ensure_installed = {
         "clangd",
         "clang-format",
+        "rust-analyzer",
         "stylua",
         "shellcheck",
         "shfmt",

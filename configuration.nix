@@ -97,7 +97,7 @@
   users.users.mikastiv = {
     isNormalUser = true;
     description = "mikastiv";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "libvirtd" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "libvirtd" "dialout" "docker" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -124,6 +124,7 @@
 
   # Virtualisation
   virtualisation.libvirtd.enable = true;
+  virtualisation.docker.enable = true;
   programs.virt-manager.enable = true;
 
   # Allow unfree packages

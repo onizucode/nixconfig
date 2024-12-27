@@ -14,6 +14,7 @@ return {
         "python",
         "query",
         "regex",
+        "rust",
         "vim",
         "yaml",
         "zig",
