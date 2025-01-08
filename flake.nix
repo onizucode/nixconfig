@@ -8,9 +8,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     zig.url = "github:mitchellh/zig-overlay";
     zig.inputs.nixpkgs.follows = "nixpkgs";
+    ghostty.url = "github:ghostty-org/ghostty";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... } @inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ghostty, ... } @inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -29,6 +30,10 @@
       specialArgs = { inherit inputs; };
       modules = [
         { nixpkgs.overlays = [ overlay-unstable ]; }
+        { environment.systemPackages = [
+            ghostty.packages.x86_64-linux.default
+          ];
+        }
         ./configuration.nix
         ./modules/nixos/gnome.nix
 #        ./modules/nixos/hyprland.nix
