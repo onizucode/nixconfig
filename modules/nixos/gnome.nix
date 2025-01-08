@@ -15,26 +15,21 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   environment.gnome.excludePackages = (with pkgs; [
+    cheese
+    epiphany
+    evince
+    file-roller
+    geary
+    gedit
     gnome-tour
     gnome-connections
     gnome-text-editor
     gnome-console
     gnome-user-docs
-    gedit
-  ]) ++ (with pkgs.gnome; [
-    cheese
     gnome-terminal
     gnome-calendar
     gnome-system-monitor
     gnome-calculator
-    yelp
-    simple-scan
-    epiphany
-    geary
-    evince
-    totem
-    file-roller
-    seahorse
     gnome-music
     gnome-clocks
     gnome-contacts
@@ -42,5 +37,9 @@
     gnome-logs
     gnome-weather
     gnome-characters
+    seahorse
+    simple-scan
+    totem
+    yelp
   ]);
 }

@@ -28,7 +28,7 @@
     valgrind
     wl-clipboard
     zigpkgs.master
-    unstable.ncdu
+    ncdu
     unzip
     zip
     python3
@@ -38,6 +38,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    ".config/ghostty/config".source = dotfiles/ghostty/config;
     ".config/kitty/kitty.conf".source = dotfiles/kitty/kitty.conf;
     ".config/kitty/theme.conf".source = dotfiles/kitty/neowave.conf;
     ".config/ncdu/config".source = dotfiles/ncdu;
@@ -72,10 +73,7 @@
     fastfetch.enable = true;
     starship.enable = true;
 
-    vscode = {
-      enable = true;
-      package = pkgs.unstable.vscode;
-    };
+    vscode.enable = true;
 
     neovim = {
       enable = true;
@@ -83,7 +81,6 @@
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
-      package = pkgs.unstable.neovim-unwrapped;
     };
 
     direnv = {
@@ -111,7 +108,7 @@
 
     eza = {
       enable = true;
-      icons = true;
+      icons = "auto";
       git = true;
     };
 

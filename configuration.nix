@@ -72,11 +72,11 @@
   # Enable CUPS to print documents.
   services.printing.enable = false;
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -105,9 +105,8 @@
 
   # Fonts
   fonts.packages = with pkgs; [
-   jetbrains-mono
-
-   (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) 
+    jetbrains-mono
+    nerd-fonts.jetbrains-mono
   ];
 
   # Default programs
