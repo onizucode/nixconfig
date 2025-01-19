@@ -7,10 +7,12 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     zig.url = "github:mitchellh/zig-overlay";
     zig.inputs.nixpkgs.follows = "nixpkgs";
+    zls.url = "github:zigtools/zls";
+    zls.inputs.nixpkgs.follows = "nixpkgs";
     ghostty.url = "github:ghostty-org/ghostty";
   };
 
-  outputs = { self, nixpkgs, home-manager, ghostty, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, ghostty, zls, ... } @inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -22,10 +24,11 @@
       inherit system;
       specialArgs = { inherit inputs; };
       modules = [
-        { environment.systemPackages = [
-            ghostty.packages.x86_64-linux.default
+        ({ pkgs, ... }: { environment.systemPackages = [
+            ghostty.packages.${pkgs.system}.default
+            zls.packages.${pkgs.system}.default
           ];
-        }
+        })
         ./configuration.nix
         ./modules/nixos/gnome.nix
 #        ./modules/nixos/hyprland.nix

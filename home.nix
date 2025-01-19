@@ -52,7 +52,7 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "nvim";
+    #EDITOR = "nvim";
   };
 
   home.sessionPath = [];
@@ -77,10 +77,99 @@
 
     neovim = {
       enable = true;
-      defaultEditor = true;
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
+    };
+
+    helix = {
+      enable = true;
+      defaultEditor = true;
+      settings = {
+        theme = "ocean-space";
+        editor = {
+          line-number = "relative";
+          lsp.display-messages = true;
+          end-of-line-diagnostics = "hint";
+          inline-diagnostics.cursor-line = "warning";
+          cursor-shape.insert = "bar";
+          search.smart-case = false;
+        };
+      };
+      themes = {
+        ocean-space = let
+          white = "#d5ced9";
+          light-gray = "#6e7178";
+          cyan = "#87d3f8";
+          blue = "#3a75c4";
+          orange = "#f39c12";
+          yellow = "#f2f27a";
+          purple = "#c74ded";
+          red = "#e25822";
+          pink = "#ff00aa";
+          hot-pink = "#f92672";
+          green = "#14b37d";
+          bg = "#0f111a";
+          bg-light = "#191b24";
+          selected = "#414a5b";
+          cursor = "#b4b4b4";
+          bar = "#00b491";
+        in {
+          "attribute" = { fg = yellow; };
+          "comment" = { fg = light-gray; };
+          "constant" = { fg = red; };
+          "constant.numeric" = { fg = orange; };
+          "constant.builtin" = { fg = purple; };
+          "constant.character.escape" = { fg = red; };
+          "constructor" = { fg = yellow; };
+          "function" = { fg = yellow; };
+          "function.builtin" = { fg = orange; };
+          "function.macro" = { fg = orange; };
+          "keyword" = { fg = purple; };
+          "label" = { fg = white; };
+          "namespace" = { fg = white; };
+          "operator" = { fg = red; };
+          "punctuation" = { fg = white; };
+          "special" = { fg = orange; };
+          "string" = { fg = green; };
+          "tag" = { fg = orange; };
+          "type" = { fg = orange; };
+          "type.builtin" = { fg = purple; };
+          "type.enum" = { fg = purple; };
+          "variable" = { fg = cyan; };
+          "markup.heading" = { fg = hot-pink; };
+          "markup.list" = { fg = yellow; };
+          "markup.link" = { fg = purple; };
+          "markup.quote" = { fg = green; };
+          "ui.background" = { bg = bg; };
+          "ui.text" = white;
+          "ui.selection" = { bg = selected; };
+          "ui.linenr" = { fg = light-gray; };
+          "ui.linenr.selected" = { fg = white; };
+          "ui.cursor" = { bg = cursor; fg = bg; };
+          "ui.cursor.match" = { bg = selected; };
+          "ui.statusline" = { bg = bar; fg = bg; };
+          "ui.popup" = { bg = bg-light; fg = white; };
+          "ui.window" = light-gray;
+          "ui.help" = { bg = bg-light; };
+          "ui.menu" = { bg = bg-light; };
+          "ui.menu.selected" = { bg = selected; };
+          "ui.debug" = red;
+          "diff.plus" = green;
+          "diff.minus" = red;
+          "diff.delta" = orange;
+          "diagnostic.info".underline = { color = blue; style = "curl"; };
+          "diagnostic.hint".underline = { color = green; style = "curl"; };
+          "diagnostic.warning".underline = { color = yellow; style = "curl"; };
+          "diagnostic.error".underline = { color = red; style = "curl"; };
+          "diagnostic.unnecessary" = { modifiers = ["dim"]; };
+          "diagnostic.deprecated" = { modifiers = ["crossed_out"]; };
+          "info" = { fg = blue; modifiers = ["bold"]; };
+          "hint" = { fg = green; modifiers = ["bold"]; };
+          "warning" = { fg = yellow; modifiers = ["bold"]; };
+          "error" = { fg = red; modifiers = ["bold"]; };
+        };
+      };
     };
 
     direnv = {
