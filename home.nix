@@ -93,6 +93,7 @@
           end-of-line-diagnostics = "hint";
           inline-diagnostics.cursor-line = "warning";
           cursor-shape.insert = "bar";
+          popup-border = "all";
           search.smart-case = false;
         };
       };
@@ -149,10 +150,7 @@
           "ui.cursor" = { bg = cursor; fg = bg; };
           "ui.cursor.match" = { bg = selected; };
           "ui.statusline" = { bg = bar; fg = bg; };
-          "ui.popup" = { bg = bg-light; fg = white; };
           "ui.window" = light-gray;
-          "ui.help" = { bg = bg-light; };
-          "ui.menu" = { bg = bg-light; };
           "ui.menu.selected" = { bg = selected; };
           "ui.debug" = red;
           "diff.plus" = green;
