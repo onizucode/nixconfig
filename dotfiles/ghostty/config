@@ -1,2 +1,4 @@
 theme = Monokai Remastered
 shell-integration = zsh
+window-width = 1920
+window-height = 1080
