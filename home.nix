@@ -89,12 +89,10 @@
         theme = "ocean-space";
         editor = {
           line-number = "relative";
-          lsp.display-messages = true;
           end-of-line-diagnostics = "hint";
           inline-diagnostics.cursor-line = "warning";
           cursor-shape.insert = "bar";
           popup-border = "all";
-          search.smart-case = false;
         };
       };
       themes = {
