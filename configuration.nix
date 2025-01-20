@@ -94,9 +94,9 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.mikastiv = {
+  users.users.delnix = {
     isNormalUser = true;
-    description = "mikastiv";
+    description = "delnix";
     extraGroups = [ "networkmanager" "wheel" "audio" "video" "libvirtd" "dialout" "docker" ];
     packages = with pkgs; [
     #  thunderbird
@@ -113,10 +113,10 @@
   programs = {
     _1password-gui = {
       enable = true;
-      polkitPolicyOwners = [ "mikastiv" ];
+      polkitPolicyOwners = [ "delnix" ];
     };
 
-    steam.enable = true;
+    steam.enable = false;
 
     nix-ld.enable = true;
   };

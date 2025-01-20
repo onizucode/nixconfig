@@ -3,8 +3,8 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "mikastiv";
-  home.homeDirectory = "/home/mikastiv";
+  home.username = "delnix";
+  home.homeDirectory = "/home/delnix";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -18,7 +18,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    brave
+    brave	
     discord
     gnumake
     clang
@@ -33,6 +33,7 @@
     zip
     python3
     scc
+   
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -74,6 +75,7 @@
     starship.enable = true;
 
     vscode.enable = true;
+    chromium.enable = true;
 
     neovim = {
       enable = true;
@@ -177,10 +179,11 @@
     git = {
       enable = true;
       lfs.enable = true;
-      userEmail = "mikastiv@outlook.com";
-      userName = "mikastiv";
+      userEmail = "abdel.f38100@gmail.com";
+      userName = "khal38";
       extraConfig = {
         init.defaultBranch = "main";
+        pull.rebase = true;
         commit.gpgsign = true;
         gpg.format = "ssh";
         user.signingKey = "~/.ssh/id_ed25519_sign.pub";
