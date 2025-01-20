@@ -11,6 +11,14 @@
     variant = "";
   };
 
+  # Enable Gnome package
+  environment.systemPackages = with pkgs;[
+    gnome-tweaks
+    gnomeExtensions.battery-health-charging
+    gnomeExtensions.vitals
+
+  ];
+
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;

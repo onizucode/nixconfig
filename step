@@ -8,3 +8,4 @@
 8) Activer la config de home-manager : home-manager switch --flake .
 9) Pour les prochaines changement de package/config mettre cela dans le flake : home.nix
 10) Runner de nouveau le 8
+11) Mettre a jour les packages :(update les versions du flate.lock ) nix flake update -> (update sys nixos) sudo nixos-rebuild root --flake . -> (update tout dans home) home-manager switch --flake .

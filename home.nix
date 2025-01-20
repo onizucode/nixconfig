@@ -33,7 +33,7 @@
     zip
     python3
     scc
-   
+    rambox
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
