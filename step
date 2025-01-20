@@ -1,0 +1,10 @@
+1) Activer les flakes dans /etc/nixos/configuration.nix et installer git
+2) sudo nixos-rebuild switch ( dl les flakes et les activer)
+3) git clone repose en https
+4) Delete hardware configuration ( si il exitste )
+5) Dans le dossier clonner faire : cp /etc/nixos/hardware-configuration.nix .
+6) sudo nixos-rebuild switch --flake . ( installer la config )
+7) Installer home-manager : nix run home-manager/master -- init --switch
+8) Activer la config de home-manager : home-manager switch --flake .
+9) Pour les prochaines changement de package/config mettre cela dans le flake : home.nix
+10) Runner de nouveau le 8

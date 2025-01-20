@@ -35,7 +35,7 @@
       ];
     };
 
-    homeConfigurations.mikastiv = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.delnix = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = { inherit inputs; };
       modules = [
