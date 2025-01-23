@@ -8,7 +8,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./nvidia-drivers.nix
+      ./modules/nvidia-drivers.nix
+      ./modules/nvidia-prime-drivers.nix
+      ./modules/intel-drivers.nix
+      ./modules/docker.nix
+
      
 
     ];
@@ -45,8 +49,7 @@
   };
 
   # Extra Module Options
-  drivers.amdgpu.enable = true;
-  drivers.nvidia.enable = false;
+  drivers.nvidia.enable = true;
   drivers.nvidia-prime = {
     enable = false;
     intelBusID = "";

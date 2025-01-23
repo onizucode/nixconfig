@@ -31,10 +31,12 @@
     ncdu
     unzip
     zip
-    python3
+    python310
     scc
     rambox
     chromium
+    nvtopPackages.full
+    direnv
     
   ];
 
@@ -210,6 +212,13 @@
         ls = "eza";
         l = "eza -lab";
         cat = "bat";
+        sv = "sudo nvim";
+        v = "nvim";
+        ncg = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
+        fresh = "sudo nixos-rebuild switch --flake .";
+        hfresh = "home-manager switch --flake .";
+        lnix = "cd ~/nixconfig";
+
       };
     };
   };
