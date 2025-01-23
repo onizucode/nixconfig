@@ -11,7 +11,6 @@
       ./modules/nvidia-drivers.nix
       ./modules/nvidia-prime-drivers.nix
       ./modules/intel-drivers.nix
-      ./modules/docker.nix
 
      
 
