@@ -8,6 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./nvidia-drivers.nix
+     
+
     ];
 
 
@@ -40,6 +43,17 @@
       options = "--delete-older-than 14d";
     };
   };
+
+  # Extra Module Options
+  drivers.amdgpu.enable = true;
+  drivers.nvidia.enable = false;
+  drivers.nvidia-prime = {
+    enable = false;
+    intelBusID = "";
+    nvidiaBusID = "";
+  };
+  drivers.intel.enable = false;
+
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -99,6 +113,9 @@
     extraGroups = [ "networkmanager" "wheel" "audio" "video" "libvirtd" "dialout" "docker" ];
     packages = with pkgs; [
     #  thunderbird
+    git
+    chromium
+    vscodium
     ];
   };
 

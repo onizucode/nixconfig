@@ -16,6 +16,9 @@
     gnome-tweaks
     gnomeExtensions.battery-health-charging
     gnomeExtensions.vitals
+    gnomeExtensions.pop-shell
+    gnomeExtensions.gsconnect
+    gnomeExtensions.tiling-shell
 
   ];
 

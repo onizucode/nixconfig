@@ -1,0 +1,19 @@
+[/]
+enable-autotiling=true
+enable-snap-assist=false
+focus-window-down=['']
+focus-window-left=['']
+focus-window-next=['<Super>Right']
+focus-window-prev=['<Super>Left']
+focus-window-right=['']
+focus-window-up=['']
+inner-gaps=uint32 3
+move-window-down=['<Alt>Down']
+move-window-left=['<Alt>Left']
+move-window-right=['<Alt>Right']
+move-window-up=['<Alt>Up']
+outer-gaps=uint32 3
+selected-layouts=[['2861201'], ['3207788'], ['Layout 1'], ['Layout 1']]
+show-indicator=true
+span-window-left=['<Shift>Left']
+span-window-right=['<Shift>Right']
