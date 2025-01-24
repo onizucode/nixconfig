@@ -47,6 +47,22 @@
     };
   };
 
+   
+#Depreciated
+ #  hardware.opengl = {
+ #   enable = true;
+ #   driSupport32Bit = true;
+  #};
+
+    hardware.graphics.enable = true;
+
+    hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+  };
+
   # Extra Module Options
   drivers.nvidia.enable = true;
   drivers.nvidia-prime = {
@@ -55,6 +71,20 @@
     nvidiaBusID = "";
   };
   drivers.intel.enable = false;
+
+
+ # Virtualisation
+  virtualisation.libvirtd.enable = true;
+
+  virtualisation.docker = {
+    enable = true;
+    #enableNvidia = true;
+    enableOnBoot = true;
+    #extraOptions = "--runtime=nvidia";
+  };
+
+  #Needed pour docker nvida 
+  hardware.nvidia-container-toolkit.enable =true;
 
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -87,8 +117,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = false;
 
-  hardware.graphics.enable = true;
-
   # Enable sound with pipewire.
   security.rtkit.enable = true;
   services.pulseaudio.enable = false;
@@ -97,6 +125,10 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+
+
+
+
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
@@ -139,9 +171,9 @@
     nix-ld.enable = true;
   };
 
-  # Virtualisation
-  virtualisation.libvirtd.enable = true;
-  virtualisation.docker.enable = true;
+ 
+
+
   programs.virt-manager.enable = true;
 
   # Allow unfree packages
@@ -156,6 +188,10 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     kitty
+    nvidia-docker
+    docker-compose 
+    podman
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
