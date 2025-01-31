@@ -21,7 +21,7 @@
     brave	
     discord
     gnumake
-    clang
+    #clang
     lldb
     onefetch
     cpufetch
@@ -29,15 +29,29 @@
     wl-clipboard
     zigpkgs.master
     ncdu
+    python312
     unzip
     zip
-    python310
     scc
     rambox
     chromium
     nvtopPackages.full
+    devenv
     direnv
-    
+    virtualenv
+    gcc
+    firefox
+    firefox-devedition-unwrapped
+    tlp
+    rustc
+    cargo
+    pkg-config
+    openssl
+    glib.dev
+    glib-networking
+    gtk3
+    gobject-introspection
+
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -55,6 +69,7 @@
       recursive = true;
     };
   };
+
 
   home.sessionVariables = {
     #EDITOR = "nvim";
@@ -184,7 +199,7 @@
       enable = true;
       lfs.enable = true;
       userEmail = "abdel.f38100@gmail.com";
-      userName = "khal38";
+      userName = "onizucode";
       extraConfig = {
         init.defaultBranch = "main";
         pull.rebase = true;

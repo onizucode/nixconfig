@@ -13,9 +13,11 @@
       ./modules/intel-drivers.nix
 
      
-
     ];
-
+    
+ nix.extraOptions = ''
+    trusted-users = root delnix
+  '';
 
   # Bootloader.
   boot = {
@@ -54,8 +56,9 @@
  #   driSupport32Bit = true;
   #};
 
-    hardware.graphics.enable = true;
+    
 
+    hardware.graphics.enable = true;
     hardware.nvidia = {
     modesetting.enable = true;
     open = false;
@@ -93,6 +96,8 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -113,6 +118,21 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
+# Enable the X11 windowing system.
+  # You can disable this if you're only using the Wayland session.
+  services.xserver.enable = true;
+
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
+
 
   # Enable CUPS to print documents.
   services.printing.enable = false;
@@ -137,6 +157,7 @@
     #media-session.enable = true;
   };
 
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -146,10 +167,13 @@
     description = "delnix";
     extraGroups = [ "networkmanager" "wheel" "audio" "video" "libvirtd" "dialout" "docker" ];
     packages = with pkgs; [
-    #  thunderbird
-    git
-    chromium
-    vscodium
+      kdePackages.kate
+      chromium
+      git
+      vim
+      vscodium
+      wget
+      
     ];
   };
 
@@ -158,6 +182,22 @@
     jetbrains-mono
     nerd-fonts.jetbrains-mono
   ];
+  
+
+
+   services.power-profiles-daemon.enable = false;
+   services.thermald.enable = true;
+
+
+   services.tlp = {
+      settings = {
+      CPU_BOOST_ON_AC = 1;
+      CPU_BOOST_ON_BAT = 0;
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+  };
+};
+
 
   # Default programs
   programs = {
@@ -170,9 +210,6 @@
 
     nix-ld.enable = true;
   };
-
- 
-
 
   programs.virt-manager.enable = true;
 
