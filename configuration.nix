@@ -36,6 +36,9 @@
     };
   };
 
+  services.thermald.enable = true;
+
+
   # Nix settings
   nix = {
     settings = {

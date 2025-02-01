@@ -51,7 +51,7 @@
     glib-networking
     gtk3
     gobject-introspection
-
+    unetbootin
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
